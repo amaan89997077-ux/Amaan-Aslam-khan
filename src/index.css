@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg: #050505;
+}
+
+body {
+  background-color: var(--bg);
+  color: white;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(192, 38, 211, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #fff, #c026d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* assistant chat custom styles */
+.assistant-typing::after {
+  content: '▋';
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
+  font-weight: 400;
+  color: #c084fc;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.chat-bubble-assistant {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px 20px 20px 4px;
+}
+
+.chat-bubble-user {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px 20px 4px 20px;
+}
+
+/* custom scroll for chat */
+.chat-messages-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 10px;
+}
